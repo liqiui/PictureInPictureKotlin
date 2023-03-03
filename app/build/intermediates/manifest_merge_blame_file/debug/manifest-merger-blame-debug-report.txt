@@ -1,0 +1,85 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3 Copyright 2017 The Android Open Source Project
+4
+5 Licensed under the Apache License, Version 2.0 (the "License");
+6 you may not use this file except in compliance with the License.
+7 You may obtain a copy of the License at
+8
+9     http://www.apache.org/licenses/LICENSE-2.0
+10
+11 Unless required by applicable law or agreed to in writing, software
+12 distributed under the License is distributed on an "AS IS" BASIS,
+13 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14 See the License for the specific language governing permissions and
+15 limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.example.android.pictureinpicture"
+19    android:versionCode="1"
+20    android:versionName="1.0" >
+21
+22    <uses-sdk
+23        android:minSdkVersion="21"
+23-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml
+24        android:targetSdkVersion="31" />
+24-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml
+25
+26    <queries>
+26-->[androidx.media:media:1.4.0] /Users/qiulili/.gradle/caches/transforms-3/daa9cf1f1e3fff2ddd70174b02d02920/transformed/media-1.4.0/AndroidManifest.xml:24:5-28:15
+27        <intent>
+27-->[androidx.media:media:1.4.0] /Users/qiulili/.gradle/caches/transforms-3/daa9cf1f1e3fff2ddd70174b02d02920/transformed/media-1.4.0/AndroidManifest.xml:25:9-27:18
+28            <action android:name="android.media.browse.MediaBrowserService" />
+28-->[androidx.media:media:1.4.0] /Users/qiulili/.gradle/caches/transforms-3/daa9cf1f1e3fff2ddd70174b02d02920/transformed/media-1.4.0/AndroidManifest.xml:26:13-79
+28-->[androidx.media:media:1.4.0] /Users/qiulili/.gradle/caches/transforms-3/daa9cf1f1e3fff2ddd70174b02d02920/transformed/media-1.4.0/AndroidManifest.xml:26:21-76
+29        </intent>
+30    </queries>
+31
+32    <application
+32-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:21:5-44:19
+33        android:allowBackup="true"
+33-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:22:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.6.0] /Users/qiulili/.gradle/caches/transforms-3/7ffab7ef46cfa2fc684d286623c5b3e3/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+35        android:debuggable="true"
+36        android:icon="@mipmap/ic_launcher"
+36-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:23:9-43
+37        android:label="@string/app_name"
+37-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:24:9-41
+38        android:supportsRtl="true"
+38-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:25:9-35
+39        android:testOnly="true"
+40        android:theme="@style/AppTheme" >
+40-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:26:9-40
+41        <activity
+41-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:28:9-37:20
+42            android:name="com.example.android.pictureinpicture.MainActivity"
+42-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:29:13-41
+43            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+43-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:30:13-91
+44            android:exported="true"
+44-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:31:13-36
+45            android:supportsPictureInPicture="true" >
+45-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:32:13-52
+46            <intent-filter>
+46-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:33:13-36:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:34:17-69
+47-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:34:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:35:17-77
+49-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:35:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:39:9-42:55
+53            android:name="com.example.android.pictureinpicture.MovieActivity"
+53-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:40:13-42
+54            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+54-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:41:13-91
+55            android:supportsPictureInPicture="true" />
+55-->/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/AndroidManifest.xml:42:13-52
+56    </application>
+57
+58</manifest>

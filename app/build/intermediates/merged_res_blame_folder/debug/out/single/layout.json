@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/movie_activity.xml",
+        "source": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/res/layout/movie_activity.xml"
+    },
+    {
+        "merged": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/main_activity.xml",
+        "source": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/res/layout/main_activity.xml"
+    },
+    {
+        "merged": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/view_movie.xml",
+        "source": "/Users/qiulili/Downloads/dev/media-samples/PictureInPictureKotlin/app/src/main/res/layout/view_movie.xml"
+    }
+]

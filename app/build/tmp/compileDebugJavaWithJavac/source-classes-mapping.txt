@@ -1,0 +1,8 @@
+com/example/android/pictureinpicture/BuildConfig.java
+ com.example.android.pictureinpicture.BuildConfig
+com/example/android/pictureinpicture/databinding/MovieActivityBinding.java
+ com.example.android.pictureinpicture.databinding.MovieActivityBinding
+com/example/android/pictureinpicture/databinding/MainActivityBinding.java
+ com.example.android.pictureinpicture.databinding.MainActivityBinding
+com/example/android/pictureinpicture/databinding/ViewMovieBinding.java
+ com.example.android.pictureinpicture.databinding.ViewMovieBinding
