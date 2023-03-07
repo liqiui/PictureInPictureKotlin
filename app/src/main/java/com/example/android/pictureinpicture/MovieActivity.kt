@@ -20,6 +20,7 @@ import android.app.PictureInPictureParams
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Rect
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaControllerCompat
@@ -28,6 +29,7 @@ import android.support.v4.media.session.PlaybackStateCompat
 import android.text.util.Linkify
 import android.util.Rational
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -39,6 +41,7 @@ import com.example.android.pictureinpicture.widget.MovieView
 /**
  * Demonstrates usage of Picture-in-Picture when using [MediaSessionCompat].
  */
+@Suppress("DEPRECATION")
 class MovieActivity : AppCompatActivity() {
 
     companion object {
@@ -151,6 +154,7 @@ class MovieActivity : AppCompatActivity() {
         session.release()
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onRestart() {
         super.onRestart()
         if (!isInPictureInPictureMode) {
@@ -174,7 +178,9 @@ class MovieActivity : AppCompatActivity() {
     override fun onPictureInPictureModeChanged(
         isInPictureInPictureMode: Boolean, newConfig: Configuration
     ) {
-        super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
+        }
         if (isInPictureInPictureMode) {
             // Hide the controls in picture-in-picture mode.
             binding.movie.hideControls()
@@ -186,12 +192,13 @@ class MovieActivity : AppCompatActivity() {
         }
     }
 
-    private fun updatePictureInPictureParams(): PictureInPictureParams {
+    private fun updatePictureInPictureParams(): PictureInPictureParams? {
         // Calculate the aspect ratio of the PiP screen.
         val aspectRatio = Rational(binding.movie.width, binding.movie.height)
         // The movie view turns into the picture-in-picture mode.
         val visibleRect = Rect()
         binding.movie.getGlobalVisibleRect(visibleRect)
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return null
         val params = PictureInPictureParams.Builder()
             .setAspectRatio(aspectRatio)
             // Specify the portion of the screen that turns into the picture-in-picture mode.
@@ -199,7 +206,11 @@ class MovieActivity : AppCompatActivity() {
             .setSourceRectHint(visibleRect)
             // The screen automatically turns into the picture-in-picture mode when it is hidden
             // by the "Home" button.
-            .setAutoEnterEnabled(true)
+            .apply {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    setAutoEnterEnabled(true)
+                }
+            }
             .build()
         setPictureInPictureParams(params)
         return params
@@ -209,7 +220,8 @@ class MovieActivity : AppCompatActivity() {
      * Enters Picture-in-Picture mode.
      */
     private fun minimize() {
-        enterPictureInPictureMode(updatePictureInPictureParams())
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
+        updatePictureInPictureParams()?.let { enterPictureInPictureMode(it) }
     }
 
     /**
